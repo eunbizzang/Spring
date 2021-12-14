@@ -18,11 +18,12 @@ public class EmpDAOImpl implements EmpDAO {
 	@Autowired
 	private JdbcTemplate template;
 	
+	
 	String sql = null;
 	
 	@Override
 	public List<EmpDTO> getEmpList() {
-		
+	
 		List<EmpDTO> list = null;
 		
 		sql = "select * from emp order by empno";
@@ -31,19 +32,21 @@ public class EmpDAOImpl implements EmpDAO {
 
 			@Override
 			public EmpDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-
+				
 				EmpDTO dto = new EmpDTO();
 				dto.setEmpno(rs.getInt("empno"));
 				dto.setEname(rs.getString("ename"));
 				dto.setJob(rs.getString("job"));
 				dto.setMgr(rs.getInt("mgr"));
 				dto.setHiredate(rs.getString("hiredate"));
-				dto.setSale(rs.getDouble("sal"));
+				dto.setSal(rs.getDouble("sal"));
 				dto.setComm(rs.getDouble("comm"));
 				dto.setDeptno(rs.getInt("deptno"));
+				
 				return dto;
 			}
 		});
+		
 	}
 
 	@Override

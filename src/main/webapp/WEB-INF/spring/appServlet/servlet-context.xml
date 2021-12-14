@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<!-- 패키지에 @Controller, @Repository, @Service, @Component
-		  애노테이션이 있으면 해당 클래스를 자동으로 스캔하여 빈으로 등록하는 태그 -->
+	          애노테이션이 있으면 해당 클래스를 자동으로 스캔하여 빈으로 등록하는 태그 -->
 	<context:component-scan base-package="com.sist" />
 	
 	

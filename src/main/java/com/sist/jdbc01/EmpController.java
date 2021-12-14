@@ -24,5 +24,8 @@ public class EmpController {
 		model.addAttribute("List", list);
 		
 		return "emp_list";
+	
 	}
+	
+	
 }

@@ -32,6 +32,23 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
+		<!-- spring-jdbc 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- lombok 라이브러리 -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.22</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		
 				
 		<!-- AspectJ -->
 		<dependency>
@@ -109,22 +126,6 @@
 			<version>1.2</version>
 		</dependency>
 	
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
-		    <groupId>org.projectlombok</groupId>
-		    <artifactId>lombok</artifactId>
-		    <version>1.18.22</version>
-		    <scope>provided</scope>
-		</dependency>
-		
-	
-		<!-- spring-jdbc 라이브러리 -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-jdbc</artifactId>
-		    <version>${org.springframework-version}</version>
-		</dependency>
-			
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
