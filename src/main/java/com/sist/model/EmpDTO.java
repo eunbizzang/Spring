@@ -1,0 +1,17 @@
+package com.sist.model;
+
+import lombok.Data;
+
+@Data
+public class EmpDTO {
+	
+	private int empno;
+	private String ename;
+	private String job;
+	private int mgr;
+	private String hiredate;
+	private double sale;
+	private double comm;
+	private int deptno;
+	
+}
