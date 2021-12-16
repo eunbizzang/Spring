@@ -9,6 +9,7 @@ public interface ProductDAO {
 	ProductDTO getProductCont(int pnum);
 	int updateProduct(ProductDTO dto);
 	int deleteProduct(int pnum);
+	void updateSeq(int pnum);
 	List<ProductDTO> searchProduct(String field, String keyword);
 	List<CategoryDTO> categoryList();
 }
