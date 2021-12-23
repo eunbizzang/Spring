@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD(Document Type Definition)
+     - 작성하는 문서가 어떤 문서인지에 대해서 정의하는 것.
+     - 하나의 시스템 내에서 사용할 xml 데이터의 구조를 정의하여 유효성을 점검할 때 사용. 
+ -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 명은 패키지명 포함해서 인터페이스 이름으로 작성을 해 주어야 함.
+     namespace는 mapper 들을 구분하는데 식별자로 사용함. -->
+<mapper namespace="com.spring.model.BoardDAO">
+
+	<select id="count" resultType="int">
+		select max(board_no) from board
+	</select>
+	
+	<select id="list" parameterType="com.board.model.PageDTO"
+		resultType="com.board.model.BoardDTO">
+		
+		<![CDATA[select * from
+			(select b.*, row_number()
+				over(order by board_no desc) rnum from board b)
+				where rnum >= #{startNo} and rnum <= #{endNo}]]>
+	</select>
+	
+	<select id="search" resultType="com.board.model.BoardDTO">
+		select * from products 
+		<include refid="search"></include>
+		order by pnum desc
+	</select>
+	
+	<sql id="search">
+		<choose>
+			<when test="searchOption == 'all'">
+				WHERE products_name like '%'||#{keyword}||'%'
+				OR company like '%'||#{keyword}||'%'
+			</when>
+			<otherwise>
+				WHERE ${searchOption} like'%'||#{keyword}||'%'
+			</otherwise>
+		</choose>
+	</sql>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
